@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <main>
+        <form
+          id="login_form"
+          className="form_class"
+          action="login/login-access.php"
+          method="post"
         >
-          Learn React
-        </a>
-      </header>
+          <div className="form_div">
+            <label>Login:</label>
+            <input
+              className="field_class"
+              name="login_txt"
+              type="text"
+              placeholder="Insira o seu login"
+              autofocus=""
+            />
+            <label>Password:</label>
+            <input
+              id="pass"
+              className="field_class"
+              name="password_txt"
+              type="password"
+              placeholder="Insira a sua senha"
+            />
+            <button
+              className="submit_class"
+              type="submit"
+              form="login_form"
+              onclick="return validarLogin()"
+            >
+              Entrar
+            </button>
+          </div>
+          <div className="info_div">
+            <p>
+              Ainda não é um usuário registrado?{" "}
+              <a href="register/reg-form.php">Cadastre-se!</a>
+            </p>
+          </div>
+        </form>
+      </main>
     </div>
   );
 }
